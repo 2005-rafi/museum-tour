@@ -1,0 +1,227 @@
+.artifacts-page {
+    padding: 3rem 2rem;
+    background: linear-gradient(135deg, #f8f4e9 0%, #e8e0d0 100%);
+    min-height: 100vh;
+}
+
+.museum-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.museum-header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    color: #2c1810;
+    margin-bottom: 1rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.museum-description {
+    color: #5a4738;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto 1rem;
+}
+
+.museum-location {
+    color: #8b4513;
+    font-size: 1.1rem;
+    font-style: italic;
+}
+
+.category-section {
+    margin-bottom: 4rem;
+}
+
+.category-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: #2c1810;
+    margin: 2rem 0;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #8b4513;
+    text-align: center;
+}
+
+.artifacts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.artifact-card {
+    background: #ffffff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.artifact-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.artifact-image-container {
+    position: relative;
+    width: 100%;
+    padding-top: 75%; /* 4:3 Aspect Ratio */
+    overflow: hidden;
+}
+
+.artifact-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.artifact-card:hover .artifact-image {
+    transform: scale(1.1);
+}
+
+.artifact-info {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.artifact-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: #2c1810;
+    margin-bottom: 0.5rem;
+}
+
+.artifact-origin {
+    color: #8b4513;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    padding: 0.5rem 1rem;
+    background: #f8f4e9;
+    border-radius: 20px;
+    display: inline-block;
+}
+
+.artifact-description {
+    color: #5a4738;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+.artifacts-loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh;
+}
+
+.loading-spinner {
+    font-size: 1.5rem;
+    color: #8b4513;
+    text-align: center;
+    position: relative;
+    padding-left: 2rem;
+}
+
+.loading-spinner::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-top: -0.75rem;
+    border: 3px solid #8b4513;
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.artifacts-error {
+    text-align: center;
+    padding: 3rem;
+    color: #cc0000;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    margin: 2rem auto;
+    max-width: 600px;
+}
+
+.artifacts-error h2 {
+    color: #cc0000;
+    margin-bottom: 1rem;
+}
+
+.no-artifacts {
+    text-align: center;
+    padding: 3rem;
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    margin: 2rem auto;
+    max-width: 600px;
+}
+
+.no-artifacts h2 {
+    font-family: 'Playfair Display', serif;
+    color: #2c1810;
+    margin-bottom: 1rem;
+}
+
+.no-artifacts p {
+    color: #5a4738;
+    font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+    .artifacts-page {
+        padding: 2rem 1rem;
+    }
+
+    .museum-header h1 {
+        font-size: 2rem;
+    }
+
+    .museum-description {
+        font-size: 1rem;
+    }
+
+    .category-title {
+        font-size: 1.5rem;
+    }
+
+    .artifacts-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .artifact-card {
+        margin-bottom: 0;
+    }
+}

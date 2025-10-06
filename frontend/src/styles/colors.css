@@ -1,0 +1,25 @@
+:root {
+    /* Primary Colors - Inspired by Classical Art and Architecture */
+    --primary-dark: #1D2327;    /* Rich ebony for elegance and depth */
+    --primary-light: #F7F3EB;   /* Warm parchment for timeless appeal */
+    --accent-gold: #D4AF37;     /* Refined museum gold for luxury */
+    --accent-bronze: #967444;   /* Aged bronze for historical essence */
+    
+    /* Secondary Colors - Gallery and Exhibition Inspired */
+    --secondary-beige: #E8E1D5; /* Gallery wall beige */
+    --secondary-brown: #4A3C2A; /* Mahogany wood tones */
+    --secondary-terra: #C67C4E; /* Terracotta artifacts */
+    --secondary-sage: #8B9B8B;  /* Patina green */
+    
+    /* Text Colors */
+    --text-light: #F7F3EB;     /* Clear, readable light text */
+    --text-dark: #1D2327;      /* Rich dark text */
+    
+    /* Accent Colors - Artifact Inspired */
+    --accent-marble: #E6DED1;   /* Classical marble */
+    --accent-ceramic: #B87E5F;  /* Ancient pottery */
+    
+    /* Overlay Colors */
+    --overlay-dark: rgba(29, 35, 39, 0.85);  /* Dramatic exhibit lighting */
+    --overlay-light: rgba(247, 243, 235, 0.92); /* Soft gallery ambiance */
+}

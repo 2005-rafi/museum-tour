@@ -1,0 +1,270 @@
+.about-section {
+    background: linear-gradient(135deg, #f8f4e9 0%, #e8e0d0 100%);
+    padding: 5rem 2rem;
+    min-height: 100vh;
+    position: relative;
+}
+
+.about-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60vh;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4));
+    z-index: 1;
+}
+
+.about-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    animation: slideUp 0.8s ease-out forwards;
+    position: relative;
+    z-index: 2;
+}
+
+.about-content {
+    padding: 2rem 3rem;
+}
+
+.about-text {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #2c1810;
+    margin-bottom: 3rem;
+    text-align: justify;
+    font-family: 'Source Sans Pro', sans-serif;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.about-container h2 {
+    font-size: 2.8rem;
+    color: #ffffff;
+    text-align: center;
+    padding: 2.5rem 0;
+    margin: 0;
+    background: linear-gradient(to right, rgba(44, 24, 16, 0.95), rgba(139, 69, 19, 0.95));
+    font-family: 'Playfair Display', serif;
+    position: relative;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    letter-spacing: 1px;
+}
+
+.about-container h2::after {
+    content: '';
+    position: absolute;
+    bottom: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #ffffff, transparent);
+}
+
+.museum-location {
+    background: linear-gradient(to right, rgba(248, 244, 233, 0.95), rgba(255, 255, 255, 0.95));
+    padding: 2rem;
+    border-radius: 15px;
+    margin: 2rem 0;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    border: 1px solid rgba(139, 69, 19, 0.1);
+}
+
+.museum-location h3 {
+    color: #8b4513;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    font-family: 'Playfair Display', serif;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.museum-location p {
+    color: #2c1810;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    font-weight: 500;
+}
+
+.museum-images {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.image-container {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    transition: all 0.4s ease;
+    aspect-ratio: 16/9;
+}
+
+.image-container:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.image-container:hover img {
+    transform: scale(1.1);
+}
+
+.image-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.7);
+    color: #ffffff;
+    font-size: 1rem;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.image-container:hover .image-caption {
+    transform: translateY(0);
+}
+
+.museum-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.stat {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(248, 244, 233, 0.95));
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(139, 69, 19, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.stat:hover {
+    transform: translateY(-5px);
+}
+
+.stat h3 {
+    color: #8b4513;
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+    font-family: 'Playfair Display', serif;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.stat p {
+    color: #2c1810;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.view-artifacts-button {
+    display: block;
+    width: fit-content;
+    margin: 2rem auto;
+    padding: 1.2rem 3rem;
+    font-size: 1.1rem;
+    color: #ffffff;
+    background: linear-gradient(135deg, #8b4513 0%, #5c2d0c 100%);
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.view-artifacts-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(135deg, #5c2d0c 0%, #8b4513 100%);
+}
+
+.loading-spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+    font-size: 1.5rem;
+    color: #8b4513;
+}
+
+.error-message {
+    text-align: center;
+    padding: 3rem;
+    color: #cc0000;
+    font-size: 1.2rem;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    margin: 2rem auto;
+    max-width: 600px;
+}
+
+@media (max-width: 768px) {
+    .about-section {
+        padding: 3rem 1rem;
+    }
+
+    .about-container {
+        margin: 1rem;
+    }
+
+    .about-content {
+        padding: 1.5rem;
+    }
+
+    .about-container h2 {
+        font-size: 2rem;
+        padding: 1.5rem 0;
+    }
+
+    .museum-images {
+        grid-template-columns: 1fr;
+    }
+
+    .museum-stats {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .view-artifacts-button {
+        width: 100%;
+        margin: 1.5rem 0;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

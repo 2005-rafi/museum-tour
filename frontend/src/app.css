@@ -1,0 +1,47 @@
+.app {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content {
+    flex: 1;
+    padding-top: 80px; /* Height of the navbar */
+    min-height: calc(100vh - 80px); /* Subtract navbar height */
+    background-color: #f8f4e9;
+}
+
+/* Ensure proper spacing for all pages */
+.page-container {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Loading spinner */
+.loading-spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px;
+}
+
+/* Error message */
+.error-message {
+    text-align: center;
+    color: #cc0000;
+    padding: 2rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .main-content {
+        padding-top: 120px; /* Adjusted for mobile navbar height */
+    }
+}
+
+@media (max-width: 576px) {
+    .page-container {
+        padding: 1rem;
+    }
+}
