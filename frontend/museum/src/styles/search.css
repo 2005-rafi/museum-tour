@@ -1,0 +1,120 @@
+/* ========================================================
+   search.css  –  Search page
+   ======================================================== */
+
+.search-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 4rem;
+}
+
+.search-page-header {
+  margin-bottom: 2rem;
+}
+
+.search-page-header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  color: #2c1810;
+  margin: 0 0 1rem;
+}
+
+.search-page-form {
+  display: flex;
+  gap: 0.5rem;
+  max-width: 640px;
+}
+
+.search-page-input {
+  flex: 1;
+  padding: 0.7rem 1rem;
+  border: 1.5px solid #d9ccc6;
+  border-radius: 8px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  color: #2c1810;
+  background: #fff;
+  transition: border-color 0.2s;
+}
+
+.search-page-input:focus {
+  outline: none;
+  border-color: #69341f;
+}
+
+.search-page-btn {
+  padding: 0.7rem 1.25rem;
+  background: #69341f;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background 0.2s;
+}
+
+.search-page-btn:hover {
+  background: #8b4a2e;
+}
+
+/* Tabs */
+.search-tabs {
+  display: flex;
+  gap: 0.25rem;
+  border-bottom: 2px solid #e8ddd4;
+  margin-bottom: 2rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.search-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.search-tab-btn {
+  padding: 0.6rem 1.25rem;
+  border: none;
+  background: none;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #6b5b52;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+  white-space: nowrap;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.search-tab-btn:hover {
+  color: #69341f;
+}
+
+.search-tab-btn.active {
+  color: #69341f;
+  border-bottom-color: #69341f;
+}
+
+/* Results */
+.search-results {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.search-section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  color: #2c1810;
+  margin: 0 0 1.25rem;
+}
+
+.search-section {
+  display: flex;
+  flex-direction: column;
+}

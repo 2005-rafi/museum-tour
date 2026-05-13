@@ -1,0 +1,474 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #69341f;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    transition: padding 0.25s ease, box-shadow 0.25s ease;
+}
+
+.navbar--scrolled {
+    padding: 0.6rem 2rem;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
+}
+
+.nav-brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: #f8f4e9;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    text-decoration: none;
+    flex-shrink: 0;
+}
+
+.nav-brand:hover {
+    color: #d4a373;
+}
+
+/* ── Desktop nav links ───────────────────────────────────────── */
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 0.25rem;
+}
+
+.nav-links li a {
+    color: #f8f4e9;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    padding: 0.45rem 0.75rem;
+    border-radius: 4px;
+    transition: color 0.2s, background 0.2s;
+}
+
+.nav-links li a:hover {
+    color: #d4a373;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.nav-links li a.active {
+    color: #d4a373;
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+/* ── Right section: search + auth ───────────────────────────── */
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-shrink: 0;
+}
+
+/* Search form */
+.nav-search-form {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: background 0.2s;
+}
+
+.nav-search-form:focus-within {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.nav-search-input {
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 0.4rem 0.75rem;
+    color: #f8f4e9;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.85rem;
+    width: 160px;
+}
+
+.nav-search-input::placeholder { color: rgba(248, 244, 233, 0.6); }
+
+.nav-search-btn {
+    background: transparent;
+    border: none;
+    color: rgba(248, 244, 233, 0.75);
+    cursor: pointer;
+    padding: 0.4rem 0.65rem;
+    transition: color 0.2s;
+}
+
+.nav-search-btn:hover { color: #d4a373; }
+
+/* Guest buttons */
+.nav-auth-links {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.nav-login-btn,
+.nav-register-btn {
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 500;
+    padding: 0.45rem 1rem;
+    border-radius: 6px;
+    transition: background 0.2s, color 0.2s;
+}
+
+.nav-login-btn {
+    color: #f8f4e9;
+    border: 1.5px solid rgba(248, 244, 233, 0.45);
+}
+.nav-login-btn:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: #f8f4e9;
+}
+
+.nav-register-btn {
+    background: #d4a373;
+    color: #2c1810;
+    border: 1.5px solid #d4a373;
+}
+.nav-register-btn:hover {
+    background: #c4935f;
+    border-color: #c4935f;
+}
+
+/* ── User dropdown (authenticated) ──────────────────────────── */
+
+.nav-user {
+    position: relative;
+}
+
+/* Trigger button */
+.nav-user-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1.5px solid rgba(248, 244, 233, 0.25);
+    border-radius: 24px;
+    padding: 0.35rem 0.75rem 0.35rem 0.4rem;
+    cursor: pointer;
+    color: #f8f4e9;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: background 0.2s, border-color 0.2s;
+}
+
+.nav-user-btn:hover,
+.nav-user-btn[aria-expanded="true"] {
+    background: rgba(255, 255, 255, 0.18);
+    border-color: rgba(248, 244, 233, 0.55);
+}
+
+/* Admin / moderator gets a gold-tinted border */
+.nav-user-btn--staff {
+    border-color: rgba(212, 163, 115, 0.6);
+}
+.nav-user-btn--staff:hover,
+.nav-user-btn--staff[aria-expanded="true"] {
+    border-color: #d4a373;
+    background: rgba(212, 163, 115, 0.15);
+}
+
+/* Initials circle */
+.nav-avatar {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 700;
+    flex-shrink: 0;
+    color: #f8f4e9;
+}
+
+.nav-avatar--staff {
+    background: rgba(212, 163, 115, 0.35);
+    color: #f8f4e9;
+}
+
+.nav-user-display-name {
+    max-width: 90px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Inline role badge (Admin / Moderator only) */
+.nav-role-badge {
+    background: #d4a373;
+    color: #2c1810;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    padding: 0.15rem 0.45rem;
+    border-radius: 10px;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.nav-chevron {
+    font-size: 0.7rem;
+    opacity: 0.75;
+    margin-left: 2px;
+}
+
+/* ── Dropdown menu ───────────────────────────────────────────── */
+
+.nav-dropdown {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    min-width: 220px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 8px 32px rgba(44, 24, 16, 0.16);
+    border: 1px solid #e8ddd4;
+    overflow: hidden;
+    z-index: 1100;
+    animation: dropdown-appear 0.15s ease;
+}
+
+@keyframes dropdown-appear {
+    from { opacity: 0; transform: translateY(-6px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.nav-dropdown-header {
+    padding: 0.9rem 1rem;
+    background: #faf7f3;
+    border-bottom: 1px solid #e8ddd4;
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+}
+
+.nav-dropdown-fullname {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #2c1810;
+    font-family: 'Playfair Display', serif;
+}
+
+.nav-dropdown-email {
+    font-size: 0.78rem;
+    color: #7a6b63;
+    word-break: break-all;
+}
+
+/* Role label in dropdown header */
+.nav-dropdown-role {
+    display: inline-block;
+    margin-top: 0.3rem;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 0.15rem 0.5rem;
+    border-radius: 10px;
+    background: #e8ddd4;
+    color: #5a4535;
+    width: fit-content;
+}
+
+.nav-dropdown-role.is-staff {
+    background: #d4a373;
+    color: #2c1810;
+}
+
+.nav-dropdown-divider {
+    height: 1px;
+    background: #f0ebe3;
+    margin: 0.2rem 0;
+}
+
+/* Menu items — shared base */
+.nav-dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    width: 100%;
+    padding: 0.7rem 1rem;
+    background: transparent;
+    border: none;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.875rem;
+    color: #3a2a22;
+    cursor: pointer;
+    text-align: left;
+    transition: background 0.15s, color 0.15s;
+}
+
+.nav-dropdown-item:hover {
+    background: #faf7f3;
+    color: #69341f;
+}
+
+/* Admin Panel item — gold accent */
+.nav-dropdown-item--admin {
+    color: #69341f;
+    font-weight: 600;
+}
+.nav-dropdown-item--admin:hover {
+    background: #fdf5ee;
+    color: #5a2b18;
+}
+
+/* Sign Out item — red tint */
+.nav-dropdown-item--logout {
+    color: #a13030;
+}
+.nav-dropdown-item--logout:hover {
+    background: #fff5f5;
+    color: #c0392b;
+}
+
+.nav-dropdown-item i {
+    width: 16px;
+    text-align: center;
+    opacity: 0.7;
+    flex-shrink: 0;
+}
+
+/* ── Mobile hamburger ────────────────────────────────────────── */
+
+.nav-hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: transparent;
+    border: 1.5px solid rgba(248, 244, 233, 0.4);
+    border-radius: 6px;
+    padding: 0.45rem 0.6rem;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.nav-hamburger span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: #f8f4e9;
+    border-radius: 2px;
+    transition: transform 0.2s;
+}
+
+/* ── Mobile drawer ───────────────────────────────────────────── */
+
+.nav-mobile-menu {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background: #2c1810;
+    padding: 0.5rem 0 1rem;
+    display: flex;
+    flex-direction: column;
+    z-index: 990;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+    max-height: calc(100vh - 60px);
+    overflow-y: auto;
+}
+
+.nav-mobile-menu a,
+.nav-mobile-menu .nav-mobile-logout {
+    color: rgba(248, 244, 233, 0.85);
+    text-decoration: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    font-family: 'Poppins', sans-serif;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    text-align: left;
+    transition: background 0.15s, color 0.15s;
+    width: 100%;
+}
+
+.nav-mobile-menu a:hover,
+.nav-mobile-menu .nav-mobile-logout:hover {
+    background: rgba(255, 255, 255, 0.06);
+    color: #d4a373;
+}
+
+.nav-mobile-menu a.active { color: #d4a373; }
+
+/* Admin link in mobile */
+.nav-mobile-admin-link {
+    color: #d4a373 !important;
+    font-weight: 600 !important;
+    border-left: 3px solid #d4a373;
+}
+
+/* User info block in mobile drawer */
+.nav-mobile-user-info {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.85rem 1.5rem 0.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+    margin-bottom: 0.25rem;
+}
+
+.nav-mobile-user-name {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #f8f4e9;
+    font-family: 'Poppins', sans-serif;
+}
+
+.nav-mobile-role-badge {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 0.15rem 0.5rem;
+    border-radius: 10px;
+    background: rgba(248, 244, 233, 0.15);
+    color: rgba(248, 244, 233, 0.75);
+}
+
+.nav-mobile-role-badge.is-staff {
+    background: rgba(212, 163, 115, 0.3);
+    color: #d4a373;
+}
+
+/* ── Responsive ──────────────────────────────────────────────── */
+
+@media (max-width: 1024px) {
+    .nav-search-input { width: 120px; }
+}
+
+@media (max-width: 900px) {
+    .nav-links { display: none; }
+    .nav-search-form { display: none; }
+    .nav-actions { gap: 0.5rem; }
+    .nav-hamburger { display: flex; }
+}
+
+@media (max-width: 576px) {
+    .navbar { padding: 0.75rem 1rem; }
+    .nav-brand { font-size: 1.4rem; }
+    .nav-user-display-name { display: none; }
+    .nav-role-badge { display: none; }
+}
+

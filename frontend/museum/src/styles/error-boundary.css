@@ -1,0 +1,94 @@
+/* ================================================================
+   error-boundary.css  –  Global Error Boundary fallback page
+   ================================================================ */
+
+.error-boundary-page {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: #f8f4e9;
+}
+
+.error-boundary-content {
+  max-width: 480px;
+  width: 100%;
+  text-align: center;
+  animation: eb-fade-in 0.3s ease;
+}
+
+@keyframes eb-fade-in {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.error-boundary-icon {
+  font-size: 3.5rem;
+  line-height: 1;
+  margin-bottom: 1.25rem;
+}
+
+.error-boundary-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.75rem;
+  color: #2c1810;
+  margin: 0 0 0.75rem;
+}
+
+.error-boundary-message {
+  font-size: 0.95rem;
+  color: #6b5b52;
+  margin: 0 0 1.5rem;
+  line-height: 1.6;
+}
+
+/* Dev-only stack trace */
+.error-boundary-details {
+  background: #fff8f0;
+  border: 1px solid #e8ddd4;
+  border-radius: 8px;
+  padding: 1rem;
+  font-size: 0.78rem;
+  color: #c0392b;
+  text-align: left;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+.error-boundary-actions {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.error-boundary-btn {
+  padding: 0.65rem 1.5rem;
+  border-radius: 8px;
+  border: none;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.18s, transform 0.15s;
+  background: #69341f;
+  color: #fff;
+}
+
+.error-boundary-btn:hover {
+  background: #7d3f25;
+  transform: translateY(-1px);
+}
+
+.error-boundary-btn--secondary {
+  background: #fff;
+  color: #69341f;
+  border: 2px solid #69341f;
+}
+
+.error-boundary-btn--secondary:hover {
+  background: #f8f4e9;
+}
