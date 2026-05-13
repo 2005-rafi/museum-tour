@@ -225,5 +225,4 @@ The frontend uses plain CSS rather than a CSS-in-JS system, keeping styles easy 
 This repository does not currently include a license file. Add one before public release if required.
 
 ## Developer
-
-Mohammed Rafi H
+- Mohammed Rafi H
